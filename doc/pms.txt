@@ -1,0 +1,25 @@
+PackageManagerService -> main()
+-> PackageManagerService ()
+
+scanDirLI()
+
+   scanPackageLI      
+
+  PackageParser pp = new PackageParser();
+
+ final PackageParser.Package pkg;
+
+
+5868        public final ArrayList<Permission> permissions = new ArrayList<Permission>(0);
+5869        public final ArrayList<PermissionGroup> permissionGroups = new ArrayList<PermissionGroup>(0);
+5870        public final ArrayList<Activity> activities = new ArrayList<Activity>(0);
+5871        public final ArrayList<Activity> receivers = new ArrayList<Activity>(0);
+5872        public final ArrayList<Provider> providers = new ArrayList<Provider>(0);
+5873        public final ArrayList<Service> services = new ArrayList<Service>(0); 
+
+
+ parseMonolithicPackage
+
+parseBaseApk
+
+

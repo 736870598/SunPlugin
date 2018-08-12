@@ -38,6 +38,16 @@ public class MainActivity extends PluginBaseActivity{
                 startService(intent);
             }
         });
+
+        findViewById(R.id.sendBroadcast).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(that, "sssssssss", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent();
+                intent.setAction("static.broadcast");
+                sendBroadcast(intent);
+            }
+        });
     }
 
     @Override

@@ -16,4 +16,10 @@
         android:layout_height="wrap_content"
         android:text="to plugin activity" />
 
+    <Button
+        android:id="@+id/sendstaticbroadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send static broadcast" />
+
 </LinearLayout>

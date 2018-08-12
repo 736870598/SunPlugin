@@ -21,6 +21,12 @@
 
         <service android:name=".MyService"/>
 
+        <receiver android:name=".MyBroadcast">
+            <intent-filter>
+                <action android:name="static.broadcast"/>
+            </intent-filter>
+        </receiver>
+
 
     </application>
 
