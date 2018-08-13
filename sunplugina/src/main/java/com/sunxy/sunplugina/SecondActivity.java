@@ -34,7 +34,7 @@ public class SecondActivity extends PluginBaseActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction("sunxy");
-                that.sendBroadcast(intent);
+                sendBroadcast(intent);
             }
         });
 

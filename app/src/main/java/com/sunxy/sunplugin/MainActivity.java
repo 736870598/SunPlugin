@@ -11,8 +11,8 @@ import com.sunxy.sunplugin.core.host.SunPluginManager;
 
 public class MainActivity extends AppCompatActivity {
 
-//    String pluginPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/sunxy_file/plugin/pa.apk";
-    String pluginPath = "sdcard/Android/plugin/pa.apk";
+    String pluginPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/sunxy_file/plugin/pa.apk";
+//    String pluginPath = "sdcard/Android/plugin/pa.apk";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

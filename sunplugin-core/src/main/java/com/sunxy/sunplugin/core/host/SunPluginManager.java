@@ -20,7 +20,7 @@ import java.util.List;
 import dalvik.system.DexClassLoader;
 
 /**
- * --
+ * -- 插件管理器
  * <p>
  * Created by sunxy on 2018/8/10 0010.
  */
@@ -42,11 +42,13 @@ public class SunPluginManager {
         packageInfo = context.getPackageManager()
                 .getPackageArchiveInfo(path, PackageManager.GET_ACTIVITIES);
 
+        //获取DexClassLoader，通过DexClassLoader去加载类
         File dexOutFile = context.getDir("plugin_dex", Context.MODE_PRIVATE);
         dexClassLoader = new DexClassLoader(path, dexOutFile.getAbsolutePath()
-                , null, context.getClassLoader());
+                , path, context.getClassLoader());
 
         try {
+            //获取资源文件...
             AssetManager assetManager = AssetManager.class.newInstance();
             Method addAssetPath = assetManager.getClass().getMethod("addAssetPath", String.class);
             addAssetPath.invoke(assetManager, path);
@@ -54,14 +56,13 @@ public class SunPluginManager {
                     context.getResources().getConfiguration());
 
             parseReceivers(context, path);
-
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
     /**
-     * 解析apk文件的静态广播
+     * 解析apk文件的静态广播，主要通过PackageParser中的parsePackage方法将apk文件解析，获取清单文件中的消息。
      * @param context
      * @param path
      * @throws ClassNotFoundException
@@ -121,7 +122,6 @@ public class SunPluginManager {
             }
         }
     }
-
 
     public PackageInfo getPackageInfo() {
         return packageInfo;

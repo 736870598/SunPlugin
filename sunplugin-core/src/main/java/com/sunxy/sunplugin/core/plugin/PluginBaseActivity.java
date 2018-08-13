@@ -210,7 +210,13 @@ public abstract class PluginBaseActivity extends Activity implements InterfaceAc
         return super.registerReceiver(receiver, filter);
     }
 
+    @Override
+    public void sendBroadcast(Intent intent) {
+        if (that != null && that != this){
+            that.sendBroadcast(intent);
+        }else{
+            super.sendBroadcast(intent);
+        }
 
-
-
+    }
 }
